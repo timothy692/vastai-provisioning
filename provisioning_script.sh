@@ -56,10 +56,17 @@ hf download ashllay/YOLO_Models bbox/nipples_yolov8s.pt --local-dir $YOLO_DIR
 hf download ashllay/YOLO_Models bbox/vagina-v3.2.pt --local-dir $YOLO_DIR
 
 echo "============================================="
-echo "All model downloads completed successfully!"
+echo "Flattening directories and cleaning up..."
 echo "============================================="
 
+# Move files up
 mv "${DIFF_DIR}/split_files/diffusion_models/"* "$DIFF_DIR" 2>/dev/null || true
 mv "${TE_DIR}/split_files/text_encoders/"* "$TE_DIR" 2>/dev/null || true
 mv "${VAE_DIR}/split_files/vae/"* "$VAE_DIR" 2>/dev/null || true
-# mv "${YOLO_DIR}/bbox/"* "$YOLO_DIR" 2>/dev/null || true
+
+# Remove the empty leftover split_files directories 
+rm -rf "${DIFF_DIR}/split_files" "${TE_DIR}/split_files" "${VAE_DIR}/split_files"
+
+echo "============================================="
+echo "All model downloads completed successfully!"
+echo "============================================="
