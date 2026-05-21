@@ -40,6 +40,8 @@ echo "Downloading LoRas..."
 echo "============================================="
 hf download tianweiy/DMD2 dmd2_sdxl_4step_lora_fp16.safetensors --local-dir $LORA_DIR
 hf download datasets/JuDrus/Lora_other Detailed_nipples_xl.safetensors --local-dir $LORA_DIR
+hf download timothy692/timothy692-RealFeet-SDXL RealFeet.safetensors --local-dir $LORA_DIR
+hf download timothy692/Lady_Hand_SDXL lady_hand.safetensors --local-dir $LORA_DIR
 
 echo "============================================="
 echo "Downloading YOLO BBox Models..."
