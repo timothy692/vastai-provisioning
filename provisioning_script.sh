@@ -2,7 +2,7 @@
 set -eo pipefail
 
 # --- CONFIGURATION SWITCHES ---
-SDXL_ZIT_NSFW_MODELS="true"
+SDXL_ZIT_NSFW_MODELS="false"
 
 COMFY_DIR="/workspace/ComfyUI/models"
 
