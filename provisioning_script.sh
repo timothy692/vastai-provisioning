@@ -2,7 +2,7 @@
 set -eo pipefail
 
 # --- CONFIGURATION SWITCHES ---
-SDXL_ZIT_NSFW_MODELS="false"
+SDXL_ZIT_NSFW_MODELS="true"
 
 COMFY_DIR="/workspace/ComfyUI/models"
 
@@ -14,6 +14,7 @@ CHECKPOINT_DIR="${COMFY_DIR}/checkpoints"
 LORA_DIR="${COMFY_DIR}/loras"
 CONTROLNET_DIR="${COMFY_DIR}/controlnet"
 YOLO_DIR="${COMFY_DIR}/ultralytics" # bbox path not needed 
+SAMS_DIR="${COMFY_DIR}/sams"
 
 echo "Creating model directories..."
 mkdir -p "$DIFF_DIR" "$TE_DIR" "$VAE_DIR" "$UPSCALE_DIR" "$CHECKPOINT_DIR" "$LORA_DIR" "$CONTROLNET_DIR" "$YOLO_DIR"
@@ -44,8 +45,10 @@ hf download timothy692/timothy692-RealFeet-SDXL RealFeet.safetensors --local-dir
 hf download timothy692/Lady_Hand_SDXL lady_hand.safetensors --local-dir $LORA_DIR
 
 echo "============================================="
-echo "Downloading YOLO BBox Models..."
+echo "Downloading YOLO BBox Models & SAM Model..."
 echo "============================================="
+hf download timothy692/sam_vit_large sam_vit_l_0b3195.pth --local-dir $SAMS_DIR
+
 hf download ashllay/YOLO_Models bbox/nipples_yolov8s.pt --local-dir $YOLO_DIR 
 hf download ashllay/YOLO_Models bbox/vagina-v3.2.pt --local-dir $YOLO_DIR
 hf download Bingsu/adetailer face_yolov8m.pt --local-dir $YOLO_DIR
