@@ -15,6 +15,7 @@ LORA_DIR="${COMFY_DIR}/loras"
 CONTROLNET_DIR="${COMFY_DIR}/controlnet"
 YOLO_DIR="${COMFY_DIR}/ultralytics" # bbox path not needed 
 SAMS_DIR="${COMFY_DIR}/sams"
+IPADAPTER_DIR="${COMFY_DIR}/ipadapter"
 
 echo "Creating model directories..."
 mkdir -p "$DIFF_DIR" "$TE_DIR" "$VAE_DIR" "$UPSCALE_DIR" "$CHECKPOINT_DIR" "$LORA_DIR" "$CONTROLNET_DIR" "$YOLO_DIR"
@@ -64,6 +65,7 @@ if [ "$SDXL_ZIT_NSFW_MODELS" = "true" ]; then
     hf download hfmaster/models-moved sdxl/controlnet/xinsir-controlnet-union-sdxl-1.0-promax.safetensors --local-dir $CONTROLNET_DIR
     hf download gemasai/4x_NMKD-Superscale-SP_178000_G 4x_NMKD-Superscale-SP_178000_G.pth --local-dir $UPSCALE_DIR
     hf download uwg/upscaler ESRGAN/1x-ITF-SkinDiffDetail-Lite-v1.pth --local-dir $UPSCALE_DIR
+    hf download h94/IP-Adapter sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors --local-dir $IPADAPTER_DIR
 else
     echo "Skipping SDXL ZImageTurbo NSFW downloads" 
 fi
