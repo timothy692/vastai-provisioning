@@ -2,7 +2,8 @@
 set -eo pipefail
 
 # --- CONFIGURATION ---
-SDXL_WF="false"
+SDXL_M="false"
+POST_PROCESS_M="true"
 
 REPO="LuckyOda/comfyui-full-pack"
 COMFY_DIR="/workspace/ComfyUI/models"
@@ -30,7 +31,7 @@ dl_from() { # Usage: dl_from "LuckyOda/comfyui-full-pack" "z_image_turbo_bf16.sa
     hf download "$repo" "$file" --local-dir "$dest" 
 }
 
-echo "Downloading models..."
+echo "Downloading workflow models..."
 
 # Base Models
 dl "z_image_turbo_bf16.safetensors" "${COMFY_DIR}/diffusion_models"
@@ -57,9 +58,20 @@ dl "lips_v1.pt" "${COMFY_DIR}/ultralytics"
 dl_from "AunyMoons/loras-pack" "foot-yolov8l.pt" "${COMFY_DIR}/ultralytics"
 dl_from "timothy692/sam_vit_large" "sam_vit_l_0b3195.pth" "${COMFY_DIR}/sams"
 
-if [ "$SDXL_WF" = "true" ]; then
+if [ "$SDXL_M" = "true" ]; then
     echo "Downloading SDXL Models"
 
+fi
+
+if [ "$POST_PROCESS_M" = "true" ]; then
+    echo "Downloading post-processing models"
+
+    dl_from "black-forest-labs/FLUX.2-klein-9b-fp8" "flux-2-klein-9b-fp8.safetensors" "${COMFY_DIR}/diffusion_models"
+    dl_from "titomatus0203/qwen_3_8b_fp8mixed" "qwen_3_8b_fp8mixed.safetensors" "${COMFY_DIR}/text_encoders"
+    dl "flux2-vae.safetensors" "${COMFY_DIR}/vae"
+
+    dl_from "Danrisi/Lenovo_FluxKlein9b_base" "lenovo_flux_klein9b.safetensors" "${COMFY_DIR}/loras"
+    
 fi
 
 echo "All models downloaded"
