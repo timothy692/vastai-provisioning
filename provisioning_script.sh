@@ -1,77 +1,65 @@
 #!/bin/bash
 set -eo pipefail
 
-# --- CONFIGURATION SWITCHES ---
-SDXL_ZIT_NSFW_MODELS="false"
+# --- CONFIGURATION ---
+SDXL_WF="false"
 
+REPO="LuckyOda/comfyui-full-pack"
 COMFY_DIR="/workspace/ComfyUI/models"
 
-DIFF_DIR="${COMFY_DIR}/diffusion_models"
-TE_DIR="${COMFY_DIR}/text_encoders"
-VAE_DIR="${COMFY_DIR}/vae"
-UPSCALE_DIR="${COMFY_DIR}/upscale_models"
-CHECKPOINT_DIR="${COMFY_DIR}/checkpoints"
-LORA_DIR="${COMFY_DIR}/loras"
-YOLO_DIR="${COMFY_DIR}/ultralytics"
-SAMS_DIR="${COMFY_DIR}/sams"
-IPADAPTER_DIR="${COMFY_DIR}/ipadapter"
-CONTROLNET_DIR="${COMFY_DIR}/controlnet"
+# Define destination directories
+mkdir -p "${COMFY_DIR}/diffusion_models" \
+         "${COMFY_DIR}/text_encoders" \
+         "${COMFY_DIR}/vae" \
+         "${COMFY_DIR}/upscale_models" \
+         "${COMFY_DIR}/checkpoints" \
+         "${COMFY_DIR}/loras" \
+         "${COMFY_DIR}/ultralytics" \
+         "${COMFY_DIR}/sams" \
+         "${COMFY_DIR}/ipadapter" \
+         "${COMFY_DIR}/controlnet"
 
-echo "Creating model directories..."
-mkdir -p "$DIFF_DIR" "$TE_DIR" "$VAE_DIR" "$UPSCALE_DIR" "$CHECKPOINT_DIR" "$LORA_DIR" "$YOLO_DIR" "$SAMS_DIR" "$IPADAPTER_DIR" "$CONTROLNET_DIR"
+dl() {
+    hf download "$REPO" "$1" --local-dir "$2"
+}
 
-echo "============================================="
-echo "Downloading ZImageTurbo models..."
-echo "============================================="
-hf download Comfy-Org/z_image_turbo split_files/diffusion_models/z_image_turbo_bf16.safetensors --local-dir "$DIFF_DIR"
-hf download Comfy-Org/z_image_turbo split_files/text_encoders/qwen_3_4b.safetensors --local-dir "$TE_DIR"
-hf download Comfy-Org/z_image_turbo split_files/vae/ae.safetensors --local-dir "$VAE_DIR"
+dl_from() { # Usage: dl_from "LuckyOda/comfyui-full-pack" "z_image_turbo_bf16.safetensors" "$DIFF_DIR"
+    local repo="$1"
+    local file="$2"
+    local dest="$3"
+    hf download "$repo" "$file" --local-dir "$dest" 
+}
 
-echo "============================================="
-echo "Downloading 4x-UltraSharpV2 Upscaler..."
-echo "============================================="
-hf download GeraldoZulimar/4x-UltraSharpV2 4x-UltraSharpV2.pth --local-dir "$UPSCALE_DIR"
+echo "Downloading models..."
 
-echo "============================================="
-echo "Downloading Lustify SDXL Checkpoint..."
-echo "============================================="
-hf download aboba2005/lustifySDXLNSFW_ggwpV7 lustifySDXLNSFW_ggwpV7.safetensors --local-dir "$CHECKPOINT_DIR"
+# Base Models
+dl "z_image_turbo_bf16.safetensors" "${COMFY_DIR}/diffusion_models"
+dl "qwen_3_4b.safetensors" "${COMFY_DIR}/text_encoders"
+dl "ae.safetensors" "${COMFY_DIR}/vae"
+dl_from "aboba2005/lustifySDXLNSFW_ggwpV7" "lustifySDXLNSFW_ggwpV7.safetensors" "${COMFY_DIR}/checkpoints"
 
-echo "============================================="
-echo "Downloading LoRas..."
-echo "============================================="
-hf download tianweiy/DMD2 dmd2_sdxl_4step_lora_fp16.safetensors --local-dir "$LORA_DIR"
-hf download datasets/JuDrus/Lora_other Detailed_nipples_xl.safetensors --local-dir "$LORA_DIR"
-hf download timothy692/timothy692-RealFeet-SDXL RealFeet.safetensors --local-dir "$LORA_DIR"
-hf download timothy692/Lady_Hand_SDXL lady_hand.safetensors --local-dir "$LORA_DIR"
+# Upscalers
+dl "4x-UltraSharpV2.pth" "${COMFY_DIR}/upscale_models"
 
-echo "============================================="
-echo "Downloading YOLO BBox Models & SAM Model..."
-echo "============================================="
-hf download timothy692/sam_vit_large sam_vit_l_0b3195.pth --local-dir "$SAMS_DIR"
+# Checkpoints / LoRas
+dl "dmd2_sdxl_4step_lora_fp16.safetensors" "${COMFY_DIR}/loras"
+dl "DetailedNipples.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/timothy692-RealFeet-SDXL" "RealFeet.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/Lady_Hand_SDXL" "lady_hand.safetensors" "${COMFY_DIR}/loras"
 
-# Download directly into YOLO_DIR without sub-directories
-hf download ashllay/YOLO_Models bbox/nipples_yolov8s.pt --local-dir "$YOLO_DIR" --repo-type model && mv "${YOLO_DIR}/bbox/"* "$YOLO_DIR"
-hf download ashllay/YOLO_Models bbox/vagina-v3.2.pt --local-dir "$YOLO_DIR" --repo-type model && mv "${YOLO_DIR}/bbox/"* "$YOLO_DIR"
-hf download Bingsu/adetailer face_yolov8m.pt --local-dir "$YOLO_DIR"
-hf download Bingsu/adetailer hand_yolov8s.pt --local-dir "$YOLO_DIR"
-hf download SimonJoz/comfy bbox/lips-v1.pt --local-dir "$YOLO_DIR" --repo-type model && mv "${YOLO_DIR}/bbox/"* "$YOLO_DIR"
-hf download AunyMoons/loras-pack foot-yolov8l.pt --local-dir "$YOLO_DIR"
 
-if [ "$SDXL_ZIT_NSFW_MODELS" = "true" ]; then
-    echo "Downloading SDXL ZImageTurbo NSFW models..."
-    hf download hfmaster/models-moved sdxl/controlnet/xinsir-controlnet-union-sdxl-1.0-promax.safetensors --local-dir "$CONTROLNET_DIR"
-    hf download gemasai/4x_NMKD-Superscale-SP_178000_G 4x_NMKD-Superscale-SP_178000_G.pth --local-dir "$UPSCALE_DIR"
-    hf download uwg/upscaler ESRGAN/1x-ITF-SkinDiffDetail-Lite-v1.pth --local-dir "$UPSCALE_DIR"
-    hf download h94/IP-Adapter sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors --local-dir "$IPADAPTER_DIR"
+# YOLO / BBox / SAM
+dl "nipple.pt" "${COMFY_DIR}/ultralytics"
+dl "pussyV2.pt" "${COMFY_DIR}/ultralytics"
+dl "face_yolov8m.pt" "${COMFY_DIR}/ultralytics"
+dl "hand_yolov8s.pt" "${COMFY_DIR}/ultralytics"
+dl "lips_v1.pt" "${COMFY_DIR}/ultralytics"
+dl_from "AunyMoons/loras-pack" "foot-yolov8l.pt" "${COMFY_DIR}/ultralytics"
+dl_from "timothy692/sam_vit_large" "sam_vit_l_0b3195.pth" "${COMFY_DIR}/sams"
 
-    # Flatten logic
-    mv "${CONTROLNET_DIR}/sdxl/controlnet/"* "$CONTROLNET_DIR" 2>/dev/null || true
-    mv "${UPSCALE_DIR}/ESRGAN/"* "$UPSCALE_DIR" 2>/dev/null || true
-    rm -rf "${CONTROLNET_DIR}/sdxl" "${UPSCALE_DIR}/ESRGAN"
+if [ "$SDXL_WF" = "true" ]; then
+    echo "Downloading SDXL Models"
+
 fi
 
-# Cleanup
-rm -rf "${DIFF_DIR}/split_files" "${TE_DIR}/split_files" "${VAE_DIR}/split_files" "${YOLO_DIR}/bbox"
-
-echo "All model downloads completed successfully!"
+echo "All models downloaded"
