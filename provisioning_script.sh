@@ -56,7 +56,9 @@ dl "face_yolov8m.pt" "${COMFY_DIR}/ultralytics"
 dl "hand_yolov8s.pt" "${COMFY_DIR}/ultralytics"
 dl "lips_v1.pt" "${COMFY_DIR}/ultralytics"
 dl_from "AunyMoons/loras-pack" "foot-yolov8l.pt" "${COMFY_DIR}/ultralytics"
-dl_from "timothy692/sam_vit_large" "sam_vit_l_0b3195.pth" "${COMFY_DIR}/sams"
+
+dl "sam_vit_b_01ec64.pth" "${COMFY_DIR}/sams"
+# dl_from "timothy692/sam_vit_large" "sam_vit_l_0b3195.pth" "${COMFY_DIR}/sams"
 
 if [ "$SDXL_M" = "true" ]; then
     echo "Downloading SDXL Models"
