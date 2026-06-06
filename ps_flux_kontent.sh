@@ -43,4 +43,6 @@ if [ -d "$VAE_DIR/split_files" ]; then
     rm -rf "$VAE_DIR/split_files"
 fi
 
+dl_from "Instara/kontext_big_breasts_and_butts" "kontext_big_breasts_and_butts.safetensors" "${COMFY_DIR}/loras"
+
 echo "All models downloaded"
