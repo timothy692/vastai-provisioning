@@ -6,6 +6,10 @@ export HF_XET_HIGH_PERFORMANCE=1
 # --- CONFIGURATION ---
 POST_PROCESS_M="false"
 
+echo "================================================"
+echo "Download Post Proccessing Models? $POST_PROCESS_M"
+echo "================================================"
+
 REPO="LuckyOda/comfyui-full-pack"
 COMFY_DIR="/workspace/ComfyUI/models"
 
