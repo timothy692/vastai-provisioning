@@ -1,7 +1,24 @@
 #!/bin/bash
 set -eo pipefail
 
-export HF_HUB_DISABLE_XET=1
+# Re-enable the fast Rust-based Xet engine (keep this at 0 or omit it)
+export HF_HUB_DISABLE_XET=0
+
+# Enable high-performance parallel downloads
+export HF_XET_HIGH_PERFORMANCE=1
+
+# Disable Xet's disk chunk-cache (avoids I/O write bottlenecks that cause the VM to freeze)
+export HF_XET_CHUNK_CACHE_SIZE_BYTES=0
+
+# Limit concurrent requests slightly to prevent TCP congestion/stalls on cloud networks
+export HF_XET_NUM_CONCURRENT_RANGE_GETS=32
+
+# Allow parallel writes (optimal for cloud instances using NVMe/SSD)
+export HF_XET_RECONSTRUCT_WRITE_SEQUENTIALLY=0
+
+# Increase network timeout limits so temporary drops don't kill the connection
+export HF_HUB_DOWNLOAD_TIMEOUT=120
+export HF_HUB_ETAG_TIMEOUT=120
 
 # --- CONFIGURATION ---
 POST_PROCESS_M="true"
