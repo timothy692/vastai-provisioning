@@ -2,7 +2,6 @@
 set -eo pipefail
 
 # --- CONFIGURATION ---
-SDXL_M="true"
 POST_PROCESS_M="true"
 
 REPO="LuckyOda/comfyui-full-pack"
@@ -59,11 +58,6 @@ dl_from "AunyMoons/loras-pack" "foot-yolov8l.pt" "${COMFY_DIR}/ultralytics"
 
 dl "sam_vit_b_01ec64.pth" "${COMFY_DIR}/sams"
 # dl_from "timothy692/sam_vit_large" "sam_vit_l_0b3195.pth" "${COMFY_DIR}/sams"
-
-if [ "$SDXL_M" = "true" ]; then
-    echo "Downloading SDXL Models"
-
-fi
 
 if [ "$POST_PROCESS_M" = "true" ]; then
     echo "Downloading post-processing models"
