@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eo pipefail
 
+export HF_HUB_DISABLE_XET=1
+export HF_HUB_ENABLE_HF_TRANSFER=1
+
 # --- CONFIGURATION ---
 POST_PROCESS_M="true"
 
