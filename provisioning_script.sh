@@ -2,7 +2,7 @@
 set -eo pipefail
 
 # --- CONFIGURATION ---
-SDXL_M="false"
+SDXL_M="true"
 POST_PROCESS_M="true"
 
 REPO="LuckyOda/comfyui-full-pack"
