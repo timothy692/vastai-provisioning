@@ -1,11 +1,10 @@
 #!/bin/bash
 set -eo pipefail
 
-pip install -U "huggingface_hub[cli]" hf_transfer  # docs in comments
-export HF_HUB_ENABLE_HF_TRANSFER=1                 # https://huggingface.co/docs/huggingface_hub/en/package_reference/environment_variables
+export HF_XET_HIGH_PERFORMANCE=1 
 
 # --- CONFIGURATION ---
-POST_PROCESS_M="true"
+POST_PROCESS_M="false"
 
 REPO="LuckyOda/comfyui-full-pack"
 COMFY_DIR="/workspace/ComfyUI/models"
