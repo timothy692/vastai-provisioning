@@ -15,8 +15,6 @@ dl_from() {
     hf download "$repo" "$file" --local-dir "$dest" 
 }
 
-echo "Downloading post-processing models"
-
 dl_from "titomatus0203/qwen_3_8b_fp8mixed" "qwen_3_8b_fp8mixed.safetensors" "${COMFY_DIR}/text_encoders"
 dl_from "black-forest-labs/FLUX.2-klein-9b-fp8" "flux-2-klein-9b-fp8.safetensors" "${COMFY_DIR}/diffusion_models"
 dl "flux2-vae.safetensors" "${COMFY_DIR}/vae"
