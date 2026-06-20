@@ -29,8 +29,6 @@ dl_from() { # Usage: dl_from "LuckyOda/comfyui-full-pack" "z_image_turbo_bf16.sa
     hf download "$repo" "$file" --local-dir "$dest" 
 }
 
-echo "Downloading workflow models..."
-
 # Base Models
 dl "z_image_turbo_bf16.safetensors" "${COMFY_DIR}/diffusion_models"
 dl "qwen_3_4b.safetensors" "${COMFY_DIR}/text_encoders"
@@ -45,7 +43,6 @@ dl "dmd2_sdxl_4step_lora_fp16.safetensors" "${COMFY_DIR}/loras"
 dl "DetailedNipples.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/timothy692-RealFeet-SDXL" "RealFeet.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/Lady_Hand_SDXL" "lady_hand.safetensors" "${COMFY_DIR}/loras"
-
 
 # YOLO / BBox / SAM
 dl "nipple.pt" "${COMFY_DIR}/ultralytics"
