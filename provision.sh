@@ -38,6 +38,4 @@ run_module() {
     rm -f "$temp_file"
 }
 
-# --- CONTROLLER ---
-# Add, remove, or comment out scripts below as needed
 run_module "zimageturbo.sh"
