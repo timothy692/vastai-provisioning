@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eo pipefail
 
+# Configuration
+export HF_XET_HIGH_PERFORMANCE=1 
+
 COMFY_DIR="/workspace/ComfyUI/models"
 
 # Define destination directories
@@ -18,7 +21,6 @@ mkdir -p "${COMFY_DIR}/diffusion_models" \
 GITHUB_USER="timothy692"
 GITHUB_REPO="vastai-provisioning"
 GITHUB_BRANCH="main"
-
 BASE_URL="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}"
 
 run_module() {
