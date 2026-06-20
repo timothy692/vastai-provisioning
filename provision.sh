@@ -5,6 +5,8 @@ set -eo pipefail
 export HF_XET_HIGH_PERFORMANCE=1 
 
 COMFY_DIR="/workspace/ComfyUI/models"
+# --- ADDED: Define the missing target directory variable ---
+TARGET_DIR="/workspace/ComfyUI/custom_nodes/ComfyUI_INSTARAW"
 
 # Define destination directories
 mkdir -p "${COMFY_DIR}/diffusion_models" \
@@ -16,7 +18,8 @@ mkdir -p "${COMFY_DIR}/diffusion_models" \
          "${COMFY_DIR}/ultralytics" \
          "${COMFY_DIR}/sams" \
          "${COMFY_DIR}/ipadapter" \
-         "${COMFY_DIR}/controlnet"
+         "${COMFY_DIR}/controlnet" \
+         "/workspace/ComfyUI/custom_nodes"  # Ensure custom_nodes exists
 
 if [ -z "$GH_TOKEN" ]; then
     echo "WARNING: GH_TOKEN is not set. Skipping private node pack clone."
