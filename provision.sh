@@ -25,7 +25,9 @@ if [ -z "$GH_TOKEN" ]; then
     echo "WARNING: GH_TOKEN is not set. Skipping private node pack clone."
 else
     if [ ! -d "$TARGET_DIR" ]; then
+        echo "======================================================================"
         echo "Cloning ComfyUI_INSTARAW repository..."
+        echo "======================================================================"
         git clone "https://${GH_TOKEN}@github.com/timothy692/ComfyUI_INSTARAW.git" "$TARGET_DIR"
         
         # Install requirements using the correct virtual environment
@@ -56,9 +58,9 @@ fi
 BASE_URL="https://raw.githubusercontent.com/timothy692/vastai-provisioning/main"
 run_module() {
     local script_name="$1"
-    echo "======================================"
+    echo "======================================================================"
     echo " Downloading models for module: $script_name"
-    echo "======================================"
+    echo "======================================================================"
     
     local temp_file
     temp_file=$(mktemp)
