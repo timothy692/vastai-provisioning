@@ -10,7 +10,7 @@ BASE_URL="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITH
 run_module() {
     local script_name="$1"
     echo "======================================"
-    echo " Loading and Running: $script_name"
+    echo " Downloading models for module: $script_name"
     echo "======================================"
     
     local temp_file
@@ -24,4 +24,4 @@ run_module() {
 
 # --- CONTROLLER ---
 # Add, remove, or comment out scripts below as needed
-run_module "module.sh"
+run_module "zimageturbo.sh"
