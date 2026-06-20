@@ -1,9 +1,6 @@
 #!/bin/bash
 set -eo pipefail
 
-# Configuration
-export HF_XET_HIGH_PERFORMANCE=1 
-
 COMFY_DIR="/workspace/ComfyUI/models"
 # --- ADDED: Define the missing target directory variable ---
 TARGET_DIR="/workspace/ComfyUI/custom_nodes/ComfyUI_INSTARAW"
