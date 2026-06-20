@@ -1,28 +1,14 @@
 #!/bin/bash
 set -eo pipefail
 
-export HF_XET_HIGH_PERFORMANCE=1 
-
 REPO="LuckyOda/comfyui-full-pack"
 COMFY_DIR="/workspace/ComfyUI/models"
-
-# Define destination directories
-mkdir -p "${COMFY_DIR}/diffusion_models" \
-         "${COMFY_DIR}/text_encoders" \
-         "${COMFY_DIR}/vae" \
-         "${COMFY_DIR}/upscale_models" \
-         "${COMFY_DIR}/checkpoints" \
-         "${COMFY_DIR}/loras" \
-         "${COMFY_DIR}/ultralytics" \
-         "${COMFY_DIR}/sams" \
-         "${COMFY_DIR}/ipadapter" \
-         "${COMFY_DIR}/controlnet"
 
 dl() {
     hf download "$REPO" "$1" --local-dir "$2"
 }
 
-dl_from() { # Usage: dl_from "LuckyOda/comfyui-full-pack" "z_image_turbo_bf16.safetensors" "$DIFF_DIR"
+dl_from() {
     local repo="$1"
     local file="$2"
     local dest="$3"
