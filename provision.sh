@@ -1,6 +1,20 @@
 #!/bin/bash
 set -eo pipefail
 
+COMFY_DIR="/workspace/ComfyUI/models"
+
+# Define destination directories
+mkdir -p "${COMFY_DIR}/diffusion_models" \
+         "${COMFY_DIR}/text_encoders" \
+         "${COMFY_DIR}/vae" \
+         "${COMFY_DIR}/upscale_models" \
+         "${COMFY_DIR}/checkpoints" \
+         "${COMFY_DIR}/loras" \
+         "${COMFY_DIR}/ultralytics" \
+         "${COMFY_DIR}/sams" \
+         "${COMFY_DIR}/ipadapter" \
+         "${COMFY_DIR}/controlnet"
+
 GITHUB_USER="timothy692"
 GITHUB_REPO="vastai-provisioning"
 GITHUB_BRANCH="main"
