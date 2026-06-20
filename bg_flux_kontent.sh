@@ -3,12 +3,6 @@ set -eo pipefail
 
 COMFY_DIR="/workspace/ComfyUI/models"
 
-# Define destination directories
-mkdir -p "${COMFY_DIR}/diffusion_models" \
-         "${COMFY_DIR}/text_encoders" \
-         "${COMFY_DIR}/vae" \
-         "${COMFY_DIR}/loras" \
-
 dl_from() { 
     local repo="$1"
     local file="$2"
