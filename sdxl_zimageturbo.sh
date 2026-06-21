@@ -29,9 +29,6 @@ dl_from() {
     fi
 }
 
-ip-adapter-plus-face_sdxl_vit-h.safetensors / ipdapter
-xinsir-controlnet-union-sdxl-1.0-promax.safetensors / controlnet
-
 # Base Models
 dl "z_image_turbo_bf16.safetensors" "${COMFY_DIR}/diffusion_models"
 dl "qwen_3_4b.safetensors" "${COMFY_DIR}/text_encoders"
@@ -40,8 +37,12 @@ dl_from "aboba2005/lustifySDXLNSFW_ggwpV7" "lustifySDXLNSFW_ggwpV7.safetensors" 
 
 # Upscalers
 dl "4x-UltraSharpV2.pth" "${COMFY_DIR}/upscale_models"
-4x_NMKD-Superscale-SP_178000_G 4x_NMKD-Superscale-SP_178000_G.pth
-1x-ITF-SkinDiffDetail-Lite-v1.pth
+dl_from "timothy692/4x_NMKD-Superscale-SP_178000_G" "4x_NMKD-Superscale-SP_178000_G.pth" "${COMFY_DIR}/upscale_models"
+dl_from "timothy692/1x-ITF-SkinDiffDetail-Lite-v1" "1x-ITF-SkinDiffDetail-Lite-v1.pth" "${COMFY_DIR}/upscale_models"
+
+# IPAdapter / Controlnet
+dl_from "timothy692/ip-adapter-plus-face_sdxl_vit-h" "ip-adapter-plus-face_sdxl_vit-h.safetensors" "${COMFY_DIR}/ipadapter"
+dl_from "timothy692/xinsir-controlnet-union-sdxl-1.0-promax" "xinsir-controlnet-union-sdxl-1.0-promax.safetensors" "${COMFY_DIR}/controlnet"
 
 # Checkpoints / LoRas
 dl "dmd2_sdxl_4step_lora_fp16.safetensors" "${COMFY_DIR}/loras"
