@@ -12,7 +12,7 @@ mkdir -p "${COMFY_DIR}/diffusion_models" \
          "${COMFY_DIR}/upscale_models" \
          "${COMFY_DIR}/checkpoints" \
          "${COMFY_DIR}/loras" \
-         "${COMFY_DIR}/ultralytics" \
+         "${COMFY_DIR}/ultralytics/bbox" \
          "${COMFY_DIR}/sams" \
          "${COMFY_DIR}/ipadapter" \
          "${COMFY_DIR}/controlnet" \
