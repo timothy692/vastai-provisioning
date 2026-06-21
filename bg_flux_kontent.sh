@@ -3,11 +3,17 @@ set -eo pipefail
 
 COMFY_DIR="/workspace/ComfyUI/models"
 
-dl_from() { 
+dl_from() {
     local repo="$1"
     local file="$2"
     local dest="$3"
-    hf download "$repo" "$file" --local-dir "$dest" 
+    
+    # Check if the file already exists in the destination directory
+    if [ -f "${dest}/${file}" ]; then
+        echo "[SKIP] File already exists: ${dest}/${file}"
+    else
+        hf download "$repo" "$file" --local-dir "$dest" 
+    fi
 }
 
 DIFF_MODELS_DIR="${COMFY_DIR}/diffusion_models"
