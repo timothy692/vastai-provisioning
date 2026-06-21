@@ -5,14 +5,28 @@ REPO="LuckyOda/comfyui-full-pack"
 COMFY_DIR="/workspace/ComfyUI/models"
 
 dl() {
-    hf download "$REPO" "$1" --local-dir "$2"
+    local file="$1"
+    local dest="$2"
+    
+    # Check if the file already exists in the destination directory
+    if [ -f "${dest}/${file}" ]; then
+        echo "[SKIP] File already exists: ${dest}/${file}"
+    else
+        hf download "$REPO" "$file" --local-dir "$dest"
+    fi
 }
 
 dl_from() {
     local repo="$1"
     local file="$2"
     local dest="$3"
-    hf download "$repo" "$file" --local-dir "$dest" 
+    
+    # Check if the file already exists in the destination directory
+    if [ -f "${dest}/${file}" ]; then
+        echo "[SKIP] File already exists: ${dest}/${file}"
+    else
+        hf download "$repo" "$file" --local-dir "$dest" 
+    fi
 }
 
 # Base Models
