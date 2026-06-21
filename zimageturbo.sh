@@ -31,12 +31,12 @@ dl_from "timothy692/timothy692-RealFeet-SDXL" "RealFeet.safetensors" "${COMFY_DI
 dl_from "timothy692/Lady_Hand_SDXL" "lady_hand.safetensors" "${COMFY_DIR}/loras"
 
 # YOLO / BBox / SAM
-dl "nipple.pt" "${COMFY_DIR}/ultralytics"
-dl "pussyV2.pt" "${COMFY_DIR}/ultralytics"
-dl "face_yolov8m.pt" "${COMFY_DIR}/ultralytics"
-dl "hand_yolov8s.pt" "${COMFY_DIR}/ultralytics"
-dl "lips_v1.pt" "${COMFY_DIR}/ultralytics"
-dl_from "AunyMoons/loras-pack" "foot-yolov8l.pt" "${COMFY_DIR}/ultralytics"
+dl "nipple.pt" "${COMFY_DIR}/ultralytics/bbox"
+dl "pussyV2.pt" "${COMFY_DIR}/ultralytics/bbox"
+dl "face_yolov8m.pt" "${COMFY_DIR}/ultralytics/bbox"
+dl "hand_yolov8s.pt" "${COMFY_DIR}/ultralytics/bbox"
+dl "lips_v1.pt" "${COMFY_DIR}/ultralytics/bbox"
+dl_from "AunyMoons/loras-pack" "foot-yolov8l.pt" "${COMFY_DIR}/ultralytics/bbox"
 
 dl "sam_vit_b_01ec64.pth" "${COMFY_DIR}/sams"
 # dl_from "timothy692/sam_vit_large" "sam_vit_l_0b3195.pth" "${COMFY_DIR}/sams"
