@@ -68,4 +68,4 @@ run_module() {
     rm -f "$temp_file"
 }
 
-run_module "sdxl_zimageturbo.sh"
+run_module "wan22_i2v.sh"
