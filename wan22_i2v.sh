@@ -47,12 +47,17 @@ dl_from() {
 
 # --- WAN 2.2 MODEL DOWNLOADS ---
 
-# Diffusion Models (automatically flattened directly to: models/diffusion_models/)
-dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors" "${COMFY_DIR}/diffusion_models"
-dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors" "${COMFY_DIR}/diffusion_models"
+# fp16 (high end)
+# dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors" "${COMFY_DIR}/diffusion_models"
+# dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors" "${COMFY_DIR}/diffusion_models"
 
-# Text Encoder (automatically flattened directly to: models/text_encoders/)
+# fp8 scaled
+dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors" "${COMFY_DIR}/diffusion_models"
+dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors" "${COMFY_DIR}/diffusion_models"
+
+
+# Text Encoder 
 dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" "${COMFY_DIR}/text_encoders"
 
-# VAE (automatically flattened directly to: models/vae/)
+# VAE 
 dl_from "Comfy-Org/Wan_2.2_ComfyUI_Repackaged" "split_files/vae/wan_2.1_vae.safetensors" "${COMFY_DIR}/vae"
