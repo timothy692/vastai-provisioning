@@ -18,38 +18,35 @@ mkdir -p "${COMFY_DIR}/diffusion_models" \
          "${COMFY_DIR}/controlnet" \
          "/workspace/ComfyUI/custom_nodes"  # Ensure custom_nodes exists
 
-if [ -z "$GH_TOKEN" ]; then
-    echo "WARNING: GH_TOKEN is not set. Skipping private node pack clone."
-else
-    if [ ! -d "$TARGET_DIR" ]; then
-        echo "======================================================================"
-        echo "Cloning ComfyUI_INSTARAW repository..."
-        echo "======================================================================"
-        git clone "https://${GH_TOKEN}@github.com/timothy692/ComfyUI_INSTARAW.git" "$TARGET_DIR"
+# Clone the public repository (token no longer required)
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "======================================================================"
+    echo "Cloning ComfyUI_INSTARAW repository..."
+    echo "======================================================================"
+    git clone "https://github.com/timothy692/ComfyUI_INSTARAW.git" "$TARGET_DIR"
+    
+    # Install requirements using the correct virtual environment
+    if [ -f "${TARGET_DIR}/requirements.txt" ]; then
+        echo "Found requirements.txt. Locating ComfyUI virtual environment..."
         
-        # Install requirements using the correct virtual environment
-        if [ -f "${TARGET_DIR}/requirements.txt" ]; then
-            echo "Found requirements.txt. Locating ComfyUI virtual environment..."
-            
-            # Prioritize the specified .venv path
-            if [ -f "/workspace/ComfyUI/.venv/bin/pip" ]; then
-                COMFY_PIP="/workspace/ComfyUI/.venv/bin/pip"
-            elif [ -f "/venv/main/bin/pip" ]; then
-                COMFY_PIP="/venv/main/bin/pip"
-            elif [ -f "/workspace/ComfyUI/venv/bin/pip" ]; then
-                COMFY_PIP="/workspace/ComfyUI/venv/bin/pip"
-            else
-                COMFY_PIP="pip"
-            fi
-            
-            echo "Installing dependencies using: $COMFY_PIP"
-            "$COMFY_PIP" install --no-cache-dir -r "${TARGET_DIR}/requirements.txt"
+        # Prioritize the specified .venv path
+        if [ -f "/workspace/ComfyUI/.venv/bin/pip" ]; then
+            COMFY_PIP="/workspace/ComfyUI/.venv/bin/pip"
+        elif [ -f "/venv/main/bin/pip" ]; then
+            COMFY_PIP="/venv/main/bin/pip"
+        elif [ -f "/workspace/ComfyUI/venv/bin/pip" ]; then
+            COMFY_PIP="/workspace/ComfyUI/venv/bin/pip"
         else
-            echo "No requirements.txt found in node pack."
+            COMFY_PIP="pip"
         fi
+        
+        echo "Installing dependencies using: $COMFY_PIP"
+        "$COMFY_PIP" install --no-cache-dir -r "${TARGET_DIR}/requirements.txt"
     else
-        echo "Node pack already exists. Skipping clone."
+        echo "No requirements.txt found in node pack."
     fi
+else
+    echo "Node pack already exists. Skipping clone."
 fi
 
 BASE_URL="https://raw.githubusercontent.com/timothy692/vastai-provisioning/main"
