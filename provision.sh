@@ -65,4 +65,5 @@ run_module() {
     rm -f "$temp_file"
 }
 
-run_module "zimageturbo.sh"
+# run_module "zimageturbo.sh"
+run_module "sdxl_zimageturbo.sh"
