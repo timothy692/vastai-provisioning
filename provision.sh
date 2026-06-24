@@ -65,4 +65,4 @@ run_module() {
     rm -f "$temp_file"
 }
 
-run_module "wan22_i2v.sh"
+run_module "zimageturbo.sh"
