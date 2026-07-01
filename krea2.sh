@@ -71,5 +71,7 @@ dl_civitai() {
 dl_from "Comfy-Org/Krea-2" "text_encoders/qwen3vl_4b_fp8_scaled.safetensors" "${COMFY_DIR}/text_encoders"
 dl_from "Comfy-Org/Krea-2" "vae/qwen_image_vae.safetensors" "${COMFY_DIR}/vae"
 
-dl_civitai "https://civitai.com/api/download/models/3066243?fileId=2945029" "redcraftKREA2RedMix_krea2Edition.safetensors" "${COMFY_DIR}/diffusion_models"
+dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_turbo_bf16.safetensors" "${COMFY_DIR}/diffusion_models"
+#dl_civitai "https://civitai.com/api/download/models/3066243?fileId=2945029" "redcraftKREA2RedMix_krea2Edition.safetensors" "${COMFY_DIR}/diffusion_models"
+
 dl_civitai "https://civitai.red/api/download/models/3067451?fileId=2946192" "realism_engine_krea2_v1.safetensors" "${COMFY_DIR}/loras"
