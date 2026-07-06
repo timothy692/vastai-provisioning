@@ -82,7 +82,9 @@ dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_turbo_fp8_scaled.safetensors"
 
 # LoRas
 dl_civitai "https://civitai.red/api/download/models/3070702?fileId=2949534" "realism_engine_krea2_v2.safetensors" "${COMFY_DIR}/loras"
-dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
-dl_civitai "https://civitai.red/api/download/models/3075498?fileId=2954554" "nicegirls_krea2.safetensors" "${COMFY_DIR}/loras"
-dl_civitai "https://civitai.red/api/download/models/3084537?fileId=2963911" "realisticsnapshot_krea2.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3067151?fileId=2945865" "krea2_filterbypass_3vec.safetensors" "${COMFY_DIR}/loras"
+
+# dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
+# dl_civitai "https://civitai.red/api/download/models/3075498?fileId=2954554" "nicegirls_krea2.safetensors" "${COMFY_DIR}/loras"
+# dl_civitai "https://civitai.red/api/download/models/3084537?fileId=2963911" "realisticsnapshot_krea2.safetensors" "${COMFY_DIR}/loras"
 
