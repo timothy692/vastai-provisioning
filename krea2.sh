@@ -69,7 +69,8 @@ dl_civitai() {
 }
 
 dl_from "Comfy-Org/Krea-2" "text_encoders/qwen3vl_4b_fp8_scaled.safetensors" "${COMFY_DIR}/text_encoders"
-dl_from "Comfy-Org/Krea-2" "vae/qwen_image_vae.safetensors" "${COMFY_DIR}/vae"
+dl_from "wangkanai/wan21-vae" "vae/wan/wan21-vae.safetensors" "${COMFY_DIR}/vae"
+# dl_from "Comfy-Org/Krea-2" "vae/qwen_image_vae.safetensors" "${COMFY_DIR}/vae"
 
 # Krea2 raw int8 (with turbo LoRa)
 dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_raw_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
