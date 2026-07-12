@@ -23,11 +23,16 @@ dl_from() {
         echo "Downloading ${file} from ${repo} to temporary structure..."
         hf download "$repo" "$file" --local-dir "$dest" 
         
-        # 2. Move the file up to the flat target directory
-        mv "${dest}/${file}" "${dest}/${filename}"
+        # 2. Only run mv if the downloaded file is inside a subfolder
+        if [ "${dest}/${file}" != "${dest}/${filename}" ]; then
+            mv "${dest}/${file}" "${dest}/${filename}"
+        fi
         
-        # 3. Clean up the empty nested directories created by Hugging Face
-        rm -rf "${dest}/split_files"
+        # 3. Clean up the empty nested directories created by Hugging Face (e.g., split_files or vae)
+        local first_dir="${file%%/*}"
+        if [ "$first_dir" != "$file" ] && [ -d "${dest}/${first_dir}" ]; then
+            rm -rf "${dest}/${first_dir}"
+        fi
         
         echo "[SUCCESS] Saved to ${dest}/${filename}"
     fi
@@ -86,9 +91,9 @@ dl_civitai "https://civitai.red/api/download/models/3067151?fileId=2945865" "kre
 dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "snofs_krea_v1_1.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
 
-# dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000002500.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000003000.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000003750.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000002500.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000003000.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000003750.safetensors" "${COMFY_DIR}/loras"
 
 # dl_civitai "https://civitai.red/api/download/models/3075498?fileId=2954554" "nicegirls_krea2.safetensors" "${COMFY_DIR}/loras"
 # dl_civitai "https://civitai.red/api/download/models/3084537?fileId=2963911" "realisticsnapshot_krea2.safetensors" "${COMFY_DIR}/loras"
