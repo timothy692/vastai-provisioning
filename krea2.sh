@@ -81,7 +81,7 @@ dl_from "wangkanai/wan21-vae" "vae/wan/wan21-vae.safetensors" "${COMFY_DIR}/vae"
 # dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_raw_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
 # dl_from "Comfy-Org/Krea-2" "loras/krea2_turbo_lora_rank_64_bf16.safetensors" "${COMFY_DIR}/loras"
 # Turbo fp8
-dl_from "Comfy-Org/Krea-2" "diffusion_models/diffusion_models/krea2_turbo_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
+dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_turbo_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
 # Redcraft
 # dl_civitai "https://civitai.com/api/download/models/3066243?fileId=2945029" "redcraftKREA2RedMix_krea2Edition.safetensors" "${COMFY_DIR}/diffusion_models"
 
