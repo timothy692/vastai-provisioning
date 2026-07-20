@@ -91,12 +91,13 @@ dl_civitai "https://civitai.red/api/download/models/3067151?fileId=2945865" "kre
 dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "snofs_krea_v1_1.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
 
-# Krea2 EDIT
-dl_from "conradlocke/krea2-identity-edit" "krea2_identity_edit_v1_2.safetensors" "${COMFY_DIR}/diffusion_models"
-
-# dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000002500.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000003000.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/h4na_v1" "h4na_v1_krea2_lora_000003750.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3131460?fileId=3013136" "PornMaster_Krea2_Skin_Tone_Slider_V1.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3097834?fileId=2977474" "skindetails_krea2_loraholic.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3088063?fileId=2967551" "Krea2_nsfw_v0.2.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3146215?fileId=3026675" "Breast_Nipple.safetensors" "${COMFY_DIR}/loras"
 
 # dl_civitai "https://civitai.red/api/download/models/3075498?fileId=2954554" "nicegirls_krea2.safetensors" "${COMFY_DIR}/loras"
 # dl_civitai "https://civitai.red/api/download/models/3084537?fileId=2963911" "realisticsnapshot_krea2.safetensors" "${COMFY_DIR}/loras"
+
+# Krea2 EDIT
+# dl_from "conradlocke/krea2-identity-edit" "krea2_identity_edit_v1_2.safetensors" "${COMFY_DIR}/diffusion_models"
