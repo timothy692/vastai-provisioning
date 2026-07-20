@@ -64,12 +64,13 @@ dl_civitai() {
     fi
 }
 
-dl_from "titomatus0203/qwen_3_8b_fp8mixed" "qwen_3_8b_fp8mixed.safetensors" "${COMFY_DIR}/text_encoders"
-# dl_from "black-forest-labs/FLUX.2-klein-9b-fp8" "flux-2-klein-9b-fp8.safetensors" "${COMFY_DIR}/diffusion_models"
-
-dl_civitai "https://civitai.red/api/download/models/2973304?fileId=2852910" "pornmaster_fluxklein9b.safetensors" "${COMFY_DIR}/diffusion_models"
-dl_civitai "https://civitai.red/api/download/models/2960556?fileId=2839878" "snofs_fluxklein9b_v1_4.safetensors" "${COMFY_DIR}/loras"
-
 dl "flux2-vae.safetensors" "${COMFY_DIR}/vae"
+dl_from "titomatus0203/qwen_3_8b_fp8mixed" "qwen_3_8b_fp8mixed.safetensors" "${COMFY_DIR}/text_encoders"
 
+dl_from "black-forest-labs/FLUX.2-klein-9b-fp8" "flux-2-klein-9b-fp8.safetensors" "${COMFY_DIR}/diffusion_models"
+# dl_civitai "https://civitai.red/api/download/models/2973304?fileId=2852910" "pornmaster_fluxklein9b.safetensors" "${COMFY_DIR}/diffusion_models"
+
+dl_civitai "https://civitai.red/api/download/models/2960556?fileId=2839878" "snofs_fluxklein9b_v1_4.safetensors" "${COMFY_DIR}/loras"
 dl_from "Danrisi/Lenovo_FluxKlein9b_base" "lenovo_flux_klein9b.safetensors" "${COMFY_DIR}/loras"
+
+dl_from "aboba2005/lustifySDXLNSFW_ggwpV7" "lustifySDXLNSFW_ggwpV7.safetensors" "${COMFY_DIR}/checkpoints"
