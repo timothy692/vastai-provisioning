@@ -72,7 +72,7 @@ run_module() {
 
 # run_module "zimageturbo.sh"
 # run_module "sdxl_zimageturbo.sh"
-# run_module "post_processing.sh"
-run_module "krea2.sh"
+run_module "post_processing.sh"
+# run_module "krea2.sh"
 #run_module "synthid_bypass.sh"
 # run_module "bg_flux_kontent.sh"
