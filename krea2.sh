@@ -93,15 +93,15 @@ dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "len
 
 # dl_civitai "https://civitai.red/api/download/models/3131460?fileId=3013136" "PornMaster_Krea2_Skin_Tone_Slider_V1.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3097834?fileId=2977474" "skindetails_krea2_loraholic.safetensors" "${COMFY_DIR}/loras"
-# dl_civitai "https://civitai.red/api/download/models/3088063?fileId=2967551" "Krea2_nsfw_v0.2.safetensors" "${COMFY_DIR}/loras"
-# dl_civitai "https://civitai.red/api/download/models/3146215?fileId=3026675" "Breast_Nipple.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3088063?fileId=2967551" "Krea2_nsfw_v0.2.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3146215?fileId=3026675" "Breast_Nipple.safetensors" "${COMFY_DIR}/loras"
 
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002100.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002400.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002100.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002400.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002700.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003000.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003300.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003600.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003000.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003300.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003600.safetensors" "${COMFY_DIR}/loras"
 
 # Krea2 EDIT
 # dl_from "conradlocke/krea2-identity-edit" "krea2_identity_edit_v1_2.safetensors" "${COMFY_DIR}/diffusion_models"
