@@ -18,7 +18,7 @@ mkdir -p "${COMFY_DIR}/diffusion_models" \
          "${COMFY_DIR}/controlnet" \
          "/workspace/ComfyUI/custom_nodes"  # Ensure custom_nodes exists
 # --- CONFIGURATION ---
-DOWNLOAD_REP="true"
+DOWNLOAD_REP="false"
 
 if [ "$DOWNLOAD_REP" = "true" ]; then
     if [ ! -d "$TARGET_DIR" ]; then
