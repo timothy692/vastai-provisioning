@@ -76,3 +76,5 @@ run_module() {
 # run_module "krea2.sh"
 #run_module "synthid_bypass.sh"
 # run_module "bg_flux_kontent.sh"
+
+run_module "wan22_scail2.sh"
