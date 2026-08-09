@@ -88,20 +88,21 @@ dl_from "Comfy-Org/Krea-2" "loras/krea2_turbo_lora_rank_64_bf16.safetensors" "${
 # LoRas
 dl_civitai "https://civitai.red/api/download/models/3109006?fileId=2988982" "realism_engine_krea2_v3.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3067151?fileId=2945865" "krea2_filterbypass_3vec.safetensors" "${COMFY_DIR}/loras"
-dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "snofs_krea_v1_1.safetensors" "${COMFY_DIR}/loras"
+# dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "snofs_krea_v1_1.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
-# dl_civitai "https://civitai.com/api/download/models/3155234?fileId=3036036" "ultrainsta_krea2_V3_000004995.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3191538?fileId=3072276" "krea2-bloomgirls-realism.safetensors" "${COMFY_DIR}/loras"
 
-# dl_civitai "https://civitai.red/api/download/models/3131460?fileId=3013136" "PornMaster_Krea2_Skin_Tone_Slider_V1.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.com/api/download/models/3123277?fileId=3003694" "phone_photography_2025_krea2.safetensors" "${COMFY_DIR}/loras"
+
 # dl_civitai "https://civitai.red/api/download/models/3097834?fileId=2977474" "skindetails_krea2_loraholic.safetensors" "${COMFY_DIR}/loras"
-dl_civitai "https://civitai.red/api/download/models/3088063?fileId=2967551" "Krea2_nsfw_v0.2.safetensors" "${COMFY_DIR}/loras"
+# dl_civitai "https://civitai.red/api/download/models/3088063?fileId=2967551" "Krea2_nsfw_v0.2.safetensors" "${COMFY_DIR}/loras"
 # dl_civitai "https://civitai.red/api/download/models/3146215?fileId=3026675" "Breast_Nipple.safetensors" "${COMFY_DIR}/loras"
 
 # dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002100.safetensors" "${COMFY_DIR}/loras"
 # dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002400.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002700.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002700.safetensors" "${COMFY_DIR}/loras"
 # dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003000.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003300.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003300.safetensors" "${COMFY_DIR}/loras"
 # dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003600.safetensors" "${COMFY_DIR}/loras"
 
 # Krea2 EDIT
