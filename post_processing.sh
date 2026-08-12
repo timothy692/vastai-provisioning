@@ -76,4 +76,4 @@ dl_civitai "https://civitai.red/api/download/models/2921102?fileId=2799569" "bre
 
 dl_from "Danrisi/Lenovo_FluxKlein9b_base" "lenovo_flux_klein9b.safetensors" "${COMFY_DIR}/loras"
 
-# dl_from "aboba2005/lustifySDXLNSFW_ggwpV7" "lustifySDXLNSFW_ggwpV7.safetensors" "${COMFY_DIR}/checkpoints"
+dl_from "aboba2005/lustifySDXLNSFW_ggwpV7" "lustifySDXLNSFW_ggwpV7.safetensors" "${COMFY_DIR}/checkpoints"
