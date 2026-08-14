@@ -74,8 +74,8 @@ dl_civitai() {
 }
 
 # Personal LoRas
-dl_from "timothy692/rina_v1" "rina_native_v1_000001800.safetensors" "${COMFY_DIR}/loras"
-dl_from "timothy692/rina_v1" "rina_native_v1_000002100.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/rina_v1" "rina_native_v1_000001800.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/rina_v1" "rina_native_v1_000002100.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/rina_v1" "rina_native_v1_000002400.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/rina_v1" "rina_native_v1_000002700.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/rina_v1" "rina_native_v1.safetensors" "${COMFY_DIR}/loras"
