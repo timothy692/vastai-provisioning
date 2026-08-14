@@ -73,6 +73,13 @@ dl_civitai() {
     fi
 }
 
+# Personal LoRas
+dl_from "timothy692/rina_v1" "rina_native_v1_000001800.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/rina_v1" "rina_native_v1_000002100.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/rina_v1" "rina_native_v1_000002400.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/rina_v1" "rina_native_v1_000002700.safetensors" "${COMFY_DIR}/loras"
+dl_from "timothy692/rina_v1" "rina_native_v1.safetensors" "${COMFY_DIR}/loras"
+
 dl_from "Comfy-Org/Krea-2" "text_encoders/qwen3vl_4b_fp8_scaled.safetensors" "${COMFY_DIR}/text_encoders"
 dl_from "wangkanai/wan21-vae" "vae/wan/wan21-vae.safetensors" "${COMFY_DIR}/vae"
 # dl_from "Comfy-Org/Krea-2" "vae/qwen_image_vae.safetensors" "${COMFY_DIR}/vae"
@@ -98,12 +105,5 @@ dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "len
 # dl_civitai "https://civitai.red/api/download/models/3088063?fileId=2967551" "Krea2_nsfw_v0.2.safetensors" "${COMFY_DIR}/loras"
 # dl_civitai "https://civitai.red/api/download/models/3146215?fileId=3026675" "Breast_Nipple.safetensors" "${COMFY_DIR}/loras"
 
-# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002100.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002400.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000002700.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003000.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003300.safetensors" "${COMFY_DIR}/loras"
-# dl_from "timothy692/kaori_v1" "kaori_lora_v1_000003600.safetensors" "${COMFY_DIR}/loras"
-
 # Krea2 EDIT
-dl_from "conradlocke/krea2-identity-edit" "krea2_identity_edit_v1_2.safetensors" "${COMFY_DIR}/diffusion_models"
+# dl_from "conradlocke/krea2-identity-edit" "krea2_identity_edit_v1_2.safetensors" "${COMFY_DIR}/diffusion_models"
