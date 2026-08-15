@@ -85,19 +85,17 @@ dl_from "wangkanai/wan21-vae" "vae/wan/wan21-vae.safetensors" "${COMFY_DIR}/vae"
 # dl_from "Comfy-Org/Krea-2" "vae/qwen_image_vae.safetensors" "${COMFY_DIR}/vae"
 
 # Krea2 raw int8 (with turbo LoRa)
-dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_raw_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
-dl_from "Comfy-Org/Krea-2" "loras/krea2_turbo_lora_rank_64_bf16.safetensors" "${COMFY_DIR}/loras"
-# Turbo fp8
-# dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_turbo_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
-# Redcraft
-# dl_civitai "https://civitai.com/api/download/models/3066243?fileId=2945029" "redcraftKREA2RedMix_krea2Edition.safetensors" "${COMFY_DIR}/diffusion_models"
+# dl_from "Comfy-Org/Krea-2" "diffusion_models/krea2_raw_int8_convrot.safetensors" "${COMFY_DIR}/diffusion_models"
+# dl_from "Comfy-Org/Krea-2" "loras/krea2_turbo_lora_rank_64_bf16.safetensors" "${COMFY_DIR}/loras"
+
+dl_from "lodestones/Kroma" "kroma-v0.2-turbo.safetensors" "${COMFY_DIR}/diffusion_models"
 
 # LoRas
 dl_civitai "https://civitai.red/api/download/models/3109006?fileId=2988982" "realism_engine_krea2_v3.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3067151?fileId=2945865" "krea2_filterbypass_3vec.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "snofs_krea_v1_1.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
-# dl_civitai "https://civitai.red/api/download/models/3191538?fileId=3072276" "krea2-bloomgirls-realism.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3205605?fileId=3087121" "ultrainsta_krea2_V3_000005328.safetensors" "${COMFY_DIR}/loras"
 
 # dl_civitai "https://civitai.com/api/download/models/3123277?fileId=3003694" "phone_photography_2025_krea2.safetensors" "${COMFY_DIR}/loras"
 
