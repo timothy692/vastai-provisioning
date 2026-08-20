@@ -93,9 +93,9 @@ dl_civitai "https://civitai.red/api/download/models/3109006?fileId=2988982" "rea
 dl_civitai "https://civitai.red/api/download/models/3067151?fileId=2945865" "krea2_filterbypass_3vec.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "snofs_krea_v1_1.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
-# dl_civitai "https://civitai.red/api/download/models/3205605?fileId=3087121" "ultrainsta_krea2_V3_000005328.safetensors" "${COMFY_DIR}/loras"
-# dl_civitai "https://civitai.red/api/download/models/3090634?fileId=2970148" "Krea2-realism-V2.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.com/api/download/models/3151907?fileId=3032561" "krea-smartphone-photo-slider.safetensors" "${COMFY_DIR}/loras"
 
+# dl_civitai "https://civitai.red/api/download/models/3090634?fileId=2970148" "Krea2-realism-V2.safetensors" "${COMFY_DIR}/loras"
 # dl_civitai "https://civitai.com/api/download/models/3123277?fileId=3003694" "phone_photography_2025_krea2.safetensors" "${COMFY_DIR}/loras"
 
 # dl_civitai "https://civitai.red/api/download/models/3097834?fileId=2977474" "skindetails_krea2_loraholic.safetensors" "${COMFY_DIR}/loras"
