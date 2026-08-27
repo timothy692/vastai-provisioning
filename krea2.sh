@@ -74,7 +74,7 @@ dl_civitai() {
 }
 
 # Personal LoRas
-dl_from "timothy692/rina_v1" "rina_native_v1_000001800.safetensors" "${COMFY_DIR}/loras"
+# dl_from "timothy692/rina_v1" "rina_native_v1_000001800.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/rina_v1" "rina_native_v1_000002100.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/rina_v1" "rina_native_v1_000002400.safetensors" "${COMFY_DIR}/loras"
 dl_from "timothy692/rina_v1" "rina_native_v1_000002700.safetensors" "${COMFY_DIR}/loras"
@@ -95,6 +95,7 @@ dl_civitai "https://civitai.red/api/download/models/3104629?fileId=2984442" "sno
 dl_civitai "https://civitai.red/api/download/models/3075606?fileId=2954661" "lenovo_krea2.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.com/api/download/models/3151907?fileId=3032561" "krea-smartphone-photo-slider.safetensors" "${COMFY_DIR}/loras"
 dl_civitai "https://civitai.red/api/download/models/3106092?fileId=2985983" "PornMaster_Low_Resolution_Slider_Krea2_V1.safetensors" "${COMFY_DIR}/loras"
+dl_civitai "https://civitai.red/api/download/models/3268981?fileId=3152755" "grokstyle_krea2.safetensors" "${COMFY_DIR}/loras"
 
 # dl_civitai "https://civitai.com/api/download/models/3123277?fileId=3003694" "phone_photography_2025_krea2.safetensors" "${COMFY_DIR}/loras"
 
