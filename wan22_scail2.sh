@@ -75,6 +75,7 @@ dl_from "Comfy-Org/SCAIL-2" "diffusion_models/wan2.1_14B_SCAIL_2_fp8_scaled.safe
 # LoRAs
 dl_from "lightx2v/Wan2.1-I2V-14B-480P-StepDistill-CfgDistill-Lightx2v" "loras/Wan21_I2V_14B_lightx2v_cfg_step_distill_lora_rank64.safetensors" "${COMFY_DIR}/loras"
 dl_from "Kijai/WanVideo_comfy" "Pusa/Wan21_PusaV1_LoRA_14B_rank512_bf16.safetensors" "${COMFY_DIR}/loras"
+dl_fron "akash-guptag/bounce-wan-lora" "bounceV_01.safetensors" "${COMFY_DIR}/loras"
 
 # Text Encoder
 dl_from "Comfy-Org/Wan_2.1_ComfyUI_repackaged" "split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" "${COMFY_DIR}/text_encoders"
