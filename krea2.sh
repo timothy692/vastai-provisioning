@@ -81,7 +81,7 @@ dl_from "timothy692/rina_v1" "rina_native_v1_000002700.safetensors" "${COMFY_DIR
 # dl_from "timothy692/rina_v1" "rina_native_v1.safetensors" "${COMFY_DIR}/loras"
 
 dl_from "Comfy-Org/Krea-2" "text_encoders/qwen3vl_4b_fp8_scaled.safetensors" "${COMFY_DIR}/text_encoders"
-dl_from "Wan2_1_VAE_fp32.safetensors" "Wan2_1_VAE_fp32.safetensors" "${COMFY_DIR}/vae"
+dl_from "Kijai/WanVideo_comfy" "Wan2_1_VAE_fp32.safetensors" "${COMFY_DIR}/vae"
 # dl_from "Comfy-Org/Krea-2" "vae/qwen_image_vae.safetensors" "${COMFY_DIR}/vae"
 
 # Krea2 raw int8 (with turbo LoRa)
